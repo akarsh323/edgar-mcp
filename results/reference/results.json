@@ -1,0 +1,102 @@
+{
+  "generated_on": "2026-11-18",
+  "edgar_mcp_version": "0.1.0",
+  "inspect_ai_version": "0.3.289",
+  "resamples": 10000,
+  "seed": 0,
+  "groups": [
+    {
+      "model": "edgar_mcp/scripted",
+      "toolset": "designed",
+      "max_tool_output": 100000,
+      "samples": 24,
+      "questions": 24,
+      "excluded": 0,
+      "accuracy": {
+        "value": 1.0,
+        "low": 1.0,
+        "high": 1.0
+      },
+      "accuracy_by_category": {
+        "annual_figure": 1.0,
+        "current_report_count": 1.0,
+        "latest_annual_report": 1.0,
+        "quarterly_filing_date": 1.0
+      },
+      "tool_calls_per_question": 1.0,
+      "tokens_per_question": 429.875,
+      "tool_output_kib_per_question": 0.5318603515625,
+      "truncated_share_of_calls": 0.0
+    },
+    {
+      "model": "edgar_mcp/scripted",
+      "toolset": "designed",
+      "max_tool_output": 16384,
+      "samples": 24,
+      "questions": 24,
+      "excluded": 0,
+      "accuracy": {
+        "value": 1.0,
+        "low": 1.0,
+        "high": 1.0
+      },
+      "accuracy_by_category": {
+        "annual_figure": 1.0,
+        "current_report_count": 1.0,
+        "latest_annual_report": 1.0,
+        "quarterly_filing_date": 1.0
+      },
+      "tool_calls_per_question": 1.0,
+      "tokens_per_question": 429.875,
+      "tool_output_kib_per_question": 0.5318603515625,
+      "truncated_share_of_calls": 0.0
+    },
+    {
+      "model": "edgar_mcp/scripted",
+      "toolset": "baseline",
+      "max_tool_output": 100000,
+      "samples": 24,
+      "questions": 24,
+      "excluded": 0,
+      "accuracy": {
+        "value": 1.0,
+        "low": 1.0,
+        "high": 1.0
+      },
+      "accuracy_by_category": {
+        "annual_figure": 1.0,
+        "current_report_count": 1.0,
+        "latest_annual_report": 1.0,
+        "quarterly_filing_date": 1.0
+      },
+      "tool_calls_per_question": 2.0,
+      "tokens_per_question": 70926.625,
+      "tool_output_kib_per_question": 903.8502197265625,
+      "truncated_share_of_calls": 0.875
+    },
+    {
+      "model": "edgar_mcp/scripted",
+      "toolset": "baseline",
+      "max_tool_output": 16384,
+      "samples": 24,
+      "questions": 24,
+      "excluded": 0,
+      "accuracy": {
+        "value": 0.0,
+        "low": 0.0,
+        "high": 0.0
+      },
+      "accuracy_by_category": {
+        "annual_figure": 0.0,
+        "current_report_count": 0.0,
+        "latest_annual_report": 0.0,
+        "quarterly_filing_date": 0.0
+      },
+      "tool_calls_per_question": 1.5,
+      "tokens_per_question": 8613.666666666666,
+      "tool_output_kib_per_question": 843.0934244791666,
+      "truncated_share_of_calls": 1.0
+    }
+  ],
+  "excluded": []
+}
