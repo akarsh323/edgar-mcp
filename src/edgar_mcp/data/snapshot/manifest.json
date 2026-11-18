@@ -1,0 +1,64 @@
+{
+  "recorded_on": "2026-11-18",
+  "source": "SEC EDGAR public APIs (www.sec.gov, data.sec.gov)",
+  "companies": [
+    {
+      "ticker": "AAPL",
+      "cik": 320193,
+      "name": "Apple Inc."
+    },
+    {
+      "ticker": "MSFT",
+      "cik": 789019,
+      "name": "MICROSOFT CORP"
+    },
+    {
+      "ticker": "WMT",
+      "cik": 104169,
+      "name": "Walmart Inc."
+    },
+    {
+      "ticker": "ETSY",
+      "cik": 1370637,
+      "name": "ETSY INC"
+    },
+    {
+      "ticker": "SNA",
+      "cik": 91440,
+      "name": "Snap-on Inc"
+    },
+    {
+      "ticker": "HRL",
+      "cik": 48465,
+      "name": "HORMEL FOODS CORP /DE/"
+    }
+  ],
+  "tags_requested": [
+    "Assets",
+    "CashAndCashEquivalentsAtCarryingValue",
+    "EarningsPerShareDiluted",
+    "Liabilities",
+    "NetIncomeLoss",
+    "OperatingIncomeLoss",
+    "ResearchAndDevelopmentExpense",
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "Revenues",
+    "SalesRevenueNet"
+  ],
+  "tags_not_reported": [
+    "AAPL:RevenueFromContractWithCustomerIncludingAssessedTax",
+    "MSFT:RevenueFromContractWithCustomerIncludingAssessedTax",
+    "WMT:Liabilities",
+    "WMT:ResearchAndDevelopmentExpense",
+    "WMT:RevenueFromContractWithCustomerIncludingAssessedTax",
+    "ETSY:RevenueFromContractWithCustomerIncludingAssessedTax",
+    "SNA:RevenueFromContractWithCustomerIncludingAssessedTax",
+    "HRL:Liabilities",
+    "HRL:RevenueFromContractWithCustomerExcludingAssessedTax",
+    "HRL:Revenues"
+  ],
+  "requests": 73,
+  "compressed_bytes": 492580,
+  "notes": "Responses are stored byte for byte as served, gzip compressed. Submissions documents include only the SEC's 'recent' block; older paged files are not recorded. A URL that is not in the snapshot is served as HTTP 404."
+}
