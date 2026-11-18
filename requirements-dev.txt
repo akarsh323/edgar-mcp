@@ -1,0 +1,9 @@
+# Evaluation and development dependencies. Kept in sync with the `eval` and
+# `dev` extras in pyproject.toml by tests/test_packaging.py.
+-r requirements.txt
+inspect-ai>=0.3.289,<0.4
+numpy>=1.26
+mypy>=1.11
+pytest>=8.0
+pytest-cov>=5.0
+ruff>=0.6

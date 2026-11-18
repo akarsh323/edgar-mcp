@@ -1,0 +1,95 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "edgar-mcp"
+version = "0.1.0"
+description = "MCP server for SEC EDGAR filings and XBRL financials, with its tool design measured by agent evals."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "akarsh323" }]
+keywords = ["agents", "edgar", "evals", "finance", "llm", "mcp", "model-context-protocol", "sec", "xbrl"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Financial and Insurance Industry",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Office/Business :: Financial",
+  "Typing :: Typed",
+]
+dependencies = [
+  "httpx>=0.27",
+  "mcp>=2.3,<3",
+  "pydantic>=2.7",
+]
+
+[project.optional-dependencies]
+eval = [
+  "inspect-ai>=0.3.289,<0.4",
+  "numpy>=1.26",
+]
+dev = [
+  "mypy>=1.11",
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "ruff>=0.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/akarsh323/edgar-mcp"
+Issues = "https://github.com/akarsh323/edgar-mcp/issues"
+
+[project.scripts]
+edgar-mcp = "edgar_mcp.__main__:main"
+edgar-mcp-eval = "edgar_mcp.evals.cli:main"
+
+[project.entry-points.inspect_ai]
+edgar_mcp = "edgar_mcp.evals._registry"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/edgar_mcp"]
+
+[tool.ruff]
+line-length = 80
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["B", "C4", "D", "E", "F", "I", "N", "PT", "RUF", "SIM", "UP", "W"]
+ignore = ["D105", "D107"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D"]
+"scripts/**" = ["D"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unreachable = true
+files = ["src/edgar_mcp"]
+
+[[tool.mypy.overrides]]
+module = ["inspect_ai.*"]
+follow_imports = "silent"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = ["e2e: runs the evaluation through Inspect and a real MCP stdio connection"]
+
+[tool.coverage.run]
+branch = true
+source = ["edgar_mcp"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
